@@ -1,0 +1,38 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Summarization</title>
+    <!-- Correct reference to static files -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </head>
+
+  <body>
+    <br>
+    <br><h1>Team members</h1><br>
+    <p>Pooja sri
+      <br>Raj kumar <br>
+      sai manikanth <br>
+      <br> Building completed Paint Remaining <br>
+    </p>
+    <h1>Enter Text to Summarize</h1>
+    <form action="/summarize" method="POST">
+      <textarea
+        name="text"
+        rows="10"
+        cols="50"
+        placeholder="Enter your text here"
+      ></textarea
+      ><br /><br />
+      <button type="submit">Summarize</button>
+    </form>
+    <h2>Summary:</h2>
+    <div id="summary"></div>
+  </body>
+</html>
